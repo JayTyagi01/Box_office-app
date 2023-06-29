@@ -19,7 +19,10 @@ const Starred = () => {
   if (starredShows?.length > 0) {
     return <ShowGrid shows={starredShows} />;
   }
+  if (starredShowsError) {
+    return <div>Error occured: {starredShowsError.message}</div>;
+  }
 
-  return <div>Starred page, starred {starredShowsIds.length}</div>;
+  return <div>Shows are loading</div>;
 };
 export default Starred;
